@@ -4,8 +4,12 @@ on:
     branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  repository_dispatch:
+    types: [run_e2e]
 jobs:
   test:
+    env:
+      STORE_PASSWORD: ${{secrets.STORE_PASSWORD}}
     timeout-minutes: 60
     runs-on: ubuntu-latest
     steps:
