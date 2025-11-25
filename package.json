@@ -1,0 +1,23 @@
+{
+  "name": "assigment_ai_course",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MonserrattAnaya/assigment_ai_course.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MonserrattAnaya/assigment_ai_course/issues"
+  },
+  "homepage": "https://github.com/MonserrattAnaya/assigment_ai_course#readme",
+  "devDependencies": {
+    "@playwright/test": "^1.57.0",
+    "@types/node": "^24.10.1"
+  }
+}
