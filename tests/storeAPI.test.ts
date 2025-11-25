@@ -32,8 +32,8 @@ test('shows an error with invalid credentials', async ({ page }) => {
 test('Verify product price on receipt against API data @api', async ({ page, request }) => {
     const loginPage = new LoginPage(page);
     const storePage = new StorePage(page);
-    const PRODUCT_ID = 2; 
-    const EXPECTED_PRODUCT_NAME = 'Chair'; 
+    const PRODUCT_ID = 1; 
+    const EXPECTED_PRODUCT_NAME = 'Apple'; 
 
     if (process.env.STORE_PASSWORD !== undefined) {
         password = process.env.STORE_PASSWORD;
@@ -55,6 +55,7 @@ test('Verify product price on receipt against API data @api', async ({ page, req
     await page.getByRole('textbox', { name: 'Name:' }).fill('monse');
     await page.getByRole('textbox', { name: 'Address:' }).fill('home');
     await page.getByRole('button', { name: 'Confirm Purchase' }).click();
+
     const finalizePurchaseDialog = page.getByRole('dialog', { name: 'Finalize Purchase' });
     await expect(finalizePurchaseDialog).toBeVisible();
     await expect(finalizePurchaseDialog).toContainText(String(apiPrice));
@@ -100,7 +101,7 @@ test('User can logout and return to the login screen', async ({ page }) => {
     await loginPage.goto();
     await loginPage.login('monse', 'sup3rs3cr3t', 'consumer');
     await expect(page).toHaveURL(/\/store/i);
-
+    
     await page.getByRole('button', { name: 'Log Out' }).click();
     
     await expect(page).toHaveURL(/\/login/i);
