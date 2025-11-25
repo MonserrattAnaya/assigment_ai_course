@@ -27,6 +27,7 @@ export class LoginPage {
         await this.usernameField.fill(username);
         await this.passwordField.fill(password);
         await this.roleDropdown.selectOption(role);
+
         await this.loginButton.click();
     }
 }
