@@ -1,6 +1,6 @@
 import { test, expect, APIRequestContext } from '@playwright/test';
-import { LoginPage } from "../pages/LoginPage"; 
-import { StorePage } from "../pages/StorePage"; 
+import { LoginPage } from "../pages/loginPage"; 
+import { StorePage } from "../pages/storePage"; 
 
 let password: string;
 
